@@ -97,9 +97,112 @@ textarea {
    Author's custom styles
    ========================================================================== */
 
+/* scale images */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.container {
+    width: 61.8046972%;
+    max-width: 960px;
+    margin: 0 auto;
+}
 
 
+/*Grid Code */
+.grid {
+    display: block;
+    padding: 0;
+    list-style: none;
+    text-align: justify;
+}
 
+.grid-ph,
+.grid-item {
+    display: inline-block;
+    width: 24.5%; /* 4 items per row, minimal spacing */
+}
+
+/*
+.grid-ph represent placeholder elements
+these are needed to make sure the grid lays out in a pretty way.
+*/
+
+.grid-item {
+    margin-bottom: .8%;
+}
+
+.grid-item a {
+    display: block;
+}
+
+
+/* Circle CSS */
+.circle {
+    top: 50%;
+    left: 50%;
+    z-index: 2;
+    display: block;
+    opacity: 0;
+    width: 125%;
+    height: 125%;
+    background-color: rgba(218, 38, 123, .8); /*pink with alpha*/
+    border-radius: 100%;
+    transform: translate(-50%, -50%) scale(.5, .5) rotate(-20deg);
+    -webkit-transform: translate(-50%, -50%) scale(.5, .5) rotate(-20deg);
+    transition: transform .3s ease;
+    -webkit-transition: -webkit-transform .3s ease-out, opacity .3s ease-out;
+}
+/*
+    Custom easing
+    cubic-bezier(0.250, 0.460, 0.450, 0.940)
+    from: http://matthewlein.com/ceaser/;
+*/
+
+.circle:hover {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+    -webkit-transform: translate(-50%, -50%) scale(1);
+}
+/*
+    Vertically align anything
+    http://zerosixthree.se/vertical-align-anything-with-just-3-lines-of-css/
+*/
+.circle-content {
+    position: relative;
+    top: 50%;
+    display: block;
+    width: 50%;
+    margin: 0 auto;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: .1em;
+    text-align: center;
+    color: #fff;
+    transform: translateY(-50%) scale(1, 1) rotate(0deg);
+    -webkit-transform: translateY(-50%) scale(1, 1) rotate(0deg);
+    transition: transform .3s ease-out;
+}
+
+.has-circle {
+    position: relative;
+    z-index: 1;
+}
+
+.has-circle:hover {
+    z-index: 99;
+}
+
+.has-circle * {
+    position: relative;
+    z-index: 1;
+}
+
+.has-circle .circle {
+    position: absolute;
+    z-index: 2;
+}
 
 
 
