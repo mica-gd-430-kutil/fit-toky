@@ -140,19 +140,11 @@ these are needed to make sure the grid lays out in a pretty way.
 
 /* Circle CSS */
 .circle {
-    top: 50%;
-    left: 50%;
-    z-index: 2;
-    display: block;
-    opacity: 0;
-    width: 125%;
-    height: 125%;
-    background-color: rgba(218, 38, 123, .8); /*pink with alpha*/
-    border-radius: 100%;
-    transform: translate(-50%, -50%) scale(.5, .5) rotate(-20deg);
+    display: none;
+    /*transform: translate(-50%, -50%) scale(.5, .5) rotate(-20deg);
     -webkit-transform: translate(-50%, -50%) scale(.5, .5) rotate(-20deg);
     transition: transform .3s ease;
-    -webkit-transition: -webkit-transform .3s ease-out, opacity .3s ease-out;
+    -webkit-transition: -webkit-transform .3s ease-out, opacity .3s ease-out;*/
 }
 /*
     Custom easing
@@ -162,8 +154,8 @@ these are needed to make sure the grid lays out in a pretty way.
 
 .circle:hover {
     opacity: 1;
-    transform: translate(-50%, -50%) scale(1);
-    -webkit-transform: translate(-50%, -50%) scale(1);
+    transform: translate(-50%, -50%) scale(1) rotate(0deg);
+    -webkit-transform: translate(-50%, -50%) scale(1) rotate(0deg);
 }
 /*
     Vertically align anything
@@ -172,17 +164,8 @@ these are needed to make sure the grid lays out in a pretty way.
 .circle-content {
     position: relative;
     top: 50%;
-    display: block;
-    width: 50%;
-    margin: 0 auto;
-    font-weight: bold;
-    text-transform: uppercase;
-    letter-spacing: .1em;
-    text-align: center;
-    color: #fff;
-    transform: translateY(-50%) scale(1, 1) rotate(0deg);
-    -webkit-transform: translateY(-50%) scale(1, 1) rotate(0deg);
-    transition: transform .3s ease-out;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
 }
 
 .has-circle {
